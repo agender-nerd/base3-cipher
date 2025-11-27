@@ -49,6 +49,6 @@ std::string encrypt(const std::string& plaintext) {
 
 int abcPosition(char abc) {
     char abcUpper = std::toupper(abc);
-    int asciiVal = abcUpper - 65;
+    int asciiVal = abcUpper - 'A';
     return asciiVal;
 }
