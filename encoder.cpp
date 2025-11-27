@@ -28,11 +28,13 @@ int main() {
 
 std::string encrypt(const std::string& plaintext) {
     std::string ciphertext = "";
-    int charPosition;
 
     for (size_t i = 0; i < plaintext.length(); i++) {
+        int charPosition;
+        
         if (plaintext[i] == ' ') {
             ciphertext += " ";
+            charPosition = -1;
         } else {
             charPosition = abcPosition(plaintext[i]);
         }
