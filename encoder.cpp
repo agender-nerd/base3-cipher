@@ -32,7 +32,7 @@ std::string encrypt(const std::string& plaintext) {
 
     for (int i = 0; i < plaintext.length(); i++) {
         if (plaintext[i] == ' ') {
-            ciphertext += "   ";
+            ciphertext += " ";
         } else {
             charPosition = abcPosition(plaintext[i]);
         }
