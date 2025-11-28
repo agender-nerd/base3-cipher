@@ -3,7 +3,7 @@
 #include <cctype>
 #include <set>
 
-const int ALPHABET_LENGTH = 26
+const int ALPHABET_LENGTH = 26;
 const std::string CIPHER_ALPHABET[ALPHABET_LENGTH] = 
 {"▲▲▼", "▲▲◆", "▲▼▲", "▲▼▼", "▲▼◆", "▲◆▲", "▲◆▼", "▲◆◆",
 "▼▲▲", "▼▲▼", "▼▲◆", "▼▼▲", "▼▼▼", "▼▼◆", "▼◆▲", "▼◆▼", "▼◆◆",
@@ -20,11 +20,26 @@ void keyedCipherAlphabet(const std::string& keyedAlphabet, std::string (&output)
 
 int main() {
     std::string plaintext;
+    std::string ciphertext;
+    std::string key;
 
     std::cout << "Please enter plaintext to encode:" << std::endl;
     std::getline(std::cin, plaintext);
-
-    std::string ciphertext = encrypt(plaintext);
+    
+    do {
+        std::cout << "Enter key (0 for normal cipher):" << std::endl;
+        std::cin >> key;
+        
+        if (key == "0") {
+            ciphertext = encrypt(plaintext);
+        } else if (!keyValidation(key)) {
+            std::cout << "Key invalid. Try again." << std::endl;
+        } else {
+            std::string keyedCipher[26];
+            keyedCipherAlphabet(alphabetWithKey(key), keyedCipher);
+            ciphertext = encrypt(plaintext, keyedCipher);
+        }
+    } while (!(keyValidation(key) || key == "0"));
 
     std::cout << "Encoded ciphertext:" << std::endl;
     std::cout << ciphertext << std::endl;
