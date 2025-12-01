@@ -81,8 +81,8 @@ To run this program, you will need a C++ compiler (like G++, Clang, or MSVC).
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/agender-nerd/delta-k-cipher.git](https://github.com/agender-nerd/delta-k-cipher.git)
-   cd delta-k-cipher
+   git clone [https://github.com/agender-nerd/Delta-K-Cipher-Encoder.git](https://github.com/agender-nerd/Delta-K-Cipher-Encoder.git)
+   cd Delta-K-Cipher-Encoder
    ```
 2. **Compile the source code:**
    ```bash
